@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Детальний огляд</title>
+</head>
+<body>
+    <h2><li> {{ post.title }} </li></h2>
+    <h2> {{ post.content }}</h2>
+    <h3> {{ post.published_date }} </h3>
+    <h3> {{ post.author }} </h3>
+    <li>{{ post.content }} - {{ post.published_recently}}</li>
+        <h3>Комменты: </h3>
+        {%for comment in comments%}
+                <li>@{{comment.author_name}}:
+                    {{comment.text}}
+                    <br>
+                    {{comment.created_time}}
+                </li>
+                <br>
+            {%endfor%}
+
+</body>
+</html>
